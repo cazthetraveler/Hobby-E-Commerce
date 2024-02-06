@@ -8,10 +8,10 @@ const Header = () => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col className="text-center">
           <h1>Store Name</h1>
         </Col>
-        <Col>
+        <Col className="ml-auto">
           <Button>
             <i>user icon</i>
           </Button>
