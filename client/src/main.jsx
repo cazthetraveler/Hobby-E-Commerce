@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import Item from "./pages/Item.jsx";
 import Category from "./pages/Categories.jsx";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
