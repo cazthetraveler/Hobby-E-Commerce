@@ -26,9 +26,9 @@ const typeDefs = `
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addCart(_id: ID, itemName: String, itemDescription: String, itemCatigory: String, price: Int) User
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addCart(_id: ID, itemName: String, itemDescription: String, itemCatigory: String, price: Int): User
   }
 `;
 
