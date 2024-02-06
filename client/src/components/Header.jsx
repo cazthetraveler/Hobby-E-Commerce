@@ -1,6 +1,27 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+
 const Header = () => {
   //TODO
-  return <h2>This is just the header.</h2>;
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <h1>Store Name</h1>
+        </Col>
+        <Col>
+          <Button>
+            <i>user icon</i>
+          </Button>
+          <Button>
+            <i>cart icon</i>
+          </Button>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Header;
