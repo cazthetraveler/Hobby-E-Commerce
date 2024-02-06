@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage.jsx";
 import Item from "./pages/Item.jsx";
 import Category from "./pages/Categories.jsx";
 
+import "./index.css";
+
 const router = createBrowserRouter([
   {
     path: "/",
