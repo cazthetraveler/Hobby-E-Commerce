@@ -12,7 +12,7 @@ const typeDefs = `
     _id: ID
     itemName: String
     itemDescription: String
-    category: String
+    category: [String]
     price: Float
   }
 
@@ -23,12 +23,13 @@ const typeDefs = `
 
   type Query {
     users: [User]
+    items: [Item]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addCart(_id: ID, itemName: String, itemDescription: String, itemCatigory: String, price: Int): User
+    addCart(_id: ID, itemName: String, itemDescription: String, category: [String], price: Int): User
   }
 `;
 
