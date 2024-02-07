@@ -32,7 +32,7 @@ function App() {
       />
       <Nav isVisible={isNavVisible} />
       <Outlet />
-      {isModalVisible && <LoginModal onClose={toggleModal} />}{" "}
+      {isModalVisible && <LoginModal onClose={toggleModal} />}
       {/*also we need to prompt it if the user is not logged in eventually*/}
       {isCartVisible && <Cart onClose={toggleCart} />}
       <Footer />
