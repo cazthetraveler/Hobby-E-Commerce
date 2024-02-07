@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const LoginModal = ({ onClose }) => {
   //TODO
-  //toggles between login and register forms
   const [isLoginFormVisible, setLoginVisibility] = useState(true);
   const toggleForm = (e) => {
     e.preventDefault();
