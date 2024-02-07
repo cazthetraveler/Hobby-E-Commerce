@@ -12,7 +12,7 @@ const typeDefs = `
     _id: ID
     itemName: String
     itemDescription: String
-    itemCatigory: String
+    category: String
     price: Float
   }
 
