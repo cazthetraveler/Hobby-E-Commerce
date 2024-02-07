@@ -5,7 +5,6 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
-    password: String
     shoppingCart: [Item]
   }
 
@@ -13,8 +12,8 @@ const typeDefs = `
     _id: ID
     itemName: String
     itemDescription: String
-    itemCatigory: String
-    price: Int
+    category: String
+    price: Float
   }
 
   type Auth {

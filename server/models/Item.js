@@ -15,7 +15,7 @@ const itemSchema = new Schema({
     type: Array,
   },
   price: {
-    type: Integer,
+    type: Schema.Types.Decimal128,
     required: true,
   },
 });
