@@ -5,7 +5,7 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
-    shoppingCart: [Item]
+    shoppingCart: [ID]
   }
 
   type Item { 

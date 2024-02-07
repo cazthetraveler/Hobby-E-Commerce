@@ -17,3 +17,15 @@ export const GET_USERS = gql`
     }
   }
 `;
+
+export const GET_ITEMS = gql`
+  query Items {
+    items {
+      _id
+      itemName
+      itemDescription
+      category
+      price
+    }
+  }
+`;

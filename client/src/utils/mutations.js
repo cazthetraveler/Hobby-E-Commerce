@@ -52,4 +52,14 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_TO_CART = gql``;
+export const ADD_TO_CART = gql`
+  mutation Mutation($id: ID) {
+    addCart(_id: $id) {
+      _id
+      firstName
+      lastName
+      email
+      shoppingCart
+    }
+  }
+`;
