@@ -1,0 +1,74 @@
+[
+  {
+    "itemName": "One Punch Man Comic",
+    "itemDescription": "Coming Soon",
+    "category": "comics",
+    "price": "40.00"
+  },
+  {
+    "itemName": "Monopoly",
+    "itemDescription": "Coming Soon",
+    "category": "boardgames",
+    "price": "30.00"
+  },
+  {
+    "itemName": "Pokemon FireRed",
+    "itemDescription": "Coming Soon",
+    "category": "videogames",
+    "price": "60.00"
+  },
+  {
+    "itemName": "Psyduck plushie",
+    "itemDescription": "Coming Soon",
+    "category": "plushies",
+    "price": "45.00"
+  },
+  {
+    "itemName": "One Piece Comic",
+    "itemDescription": "Coming Soon",
+    "category": "comics",
+    "price": "40.00"
+  },
+  {
+    "itemName": "Mouse Trap",
+    "itemDescription": "Coming Soon",
+    "category": "boardgames",
+    "price": "25.00"
+  },
+  {
+    "itemName": "Maloch Cometh",
+    "itemDescription": "Coming Soon",
+    "category": "videogames",
+    "price": "30.00"
+  },
+  {
+    "itemName": "Wooper plushie",
+    "itemDescription": "Coming Soon",
+    "category": "plushies",
+    "price": "30.00"
+  },
+  {
+    "itemName": "Spiderman Comic",
+    "itemDescription": "Coming Soon",
+    "category": "comics",
+    "price": "50.00"
+  },
+  {
+    "itemName": "LIFE boardgame",
+    "itemDescription": "Coming Soon",
+    "category": "boardgames",
+    "price": "25.00"
+  },
+  {
+    "itemName": "Pokemon Peral",
+    "itemDescription": "Coming Soon",
+    "category": "videogames",
+    "price": "60.00"
+  },
+  {
+    "itemName": "Charmander plushie",
+    "itemDescription": "Coming Soon",
+    "category": "plushies",
+    "price": "40.00"
+  }
+]

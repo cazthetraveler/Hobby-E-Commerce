@@ -15,11 +15,11 @@ const itemSchema = new Schema({
     type: Array,
   },
   price: {
-    type: Schema.Types.Decimal128,
+    type: Number,
     required: true,
   },
 });
-
+//Schema.Types.Decimal128,
 const Item = model("Item", itemSchema);
 
 module.exports = Item;

@@ -12,7 +12,7 @@ const typeDefs = `
     _id: ID
     itemName: String
     itemDescription: String
-    category: String
+    category: [String]
     price: Float
   }
 
@@ -23,6 +23,7 @@ const typeDefs = `
 
   type Query {
     users: [User]
+    items: [Item]
   }
 
   type Mutation {
