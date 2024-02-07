@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/categories/:category", //i think this is going to change to category name?
+        path: "/categories/:category", //i think this is going to change to category name? aaaah
         element: <Category />,
       },
       {
