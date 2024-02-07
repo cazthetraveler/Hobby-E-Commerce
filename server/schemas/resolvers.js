@@ -36,9 +36,12 @@ const resolvers = {
     },
     addCart: async (parent, args, context) => {
       if (context.user) {
+        
+        const itemToAdd = await Item.findById({})
+        
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { shoppingCart: args.input } },
+          { $addToSet: { shoppingCart: args } },
           { new: true, runValidators: true }
         );
         return updatedUser;
