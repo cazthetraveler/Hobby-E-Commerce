@@ -12,12 +12,12 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { firstName, lastName, email, password }) => {
+    addUser: async (_parent, { firstName, lastName, email, password }) => {
       const user = await User.create({ firstName, lastName, email, password });
       const token = signToken(user);
       return { token, user };
     },
-    login: async (parent, { email, password }) => {
+    login: async (_parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
@@ -34,11 +34,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addCart: async (parent, args, context) => {
+    addCart: async (_parent, args, context) => {
       if (context.user) {
+        const itemToAdd = await Item.findById(args);
+        console.log(itemToAdd);
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { shoppingCart: args.input } },
+          { $addToSet: { shoppingCart: itemToAdd._id } },
           { new: true, runValidators: true }
         );
         return updatedUser;

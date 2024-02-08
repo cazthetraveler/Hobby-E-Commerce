@@ -5,7 +5,7 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
-    shoppingCart: [Item]
+    shoppingCart: [ID]
   }
 
   type Item { 
@@ -29,7 +29,7 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addCart(_id: ID, itemName: String, itemDescription: String, category: [String], price: Int): User
+    addCart(_id: ID): User
   }
 `;
 

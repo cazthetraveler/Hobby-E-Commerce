@@ -19,7 +19,7 @@ const itemSchema = new Schema({
     required: true,
   },
 });
-//Schema.Types.Decimal128,
+
 const Item = model("Item", itemSchema);
 
 module.exports = Item;
