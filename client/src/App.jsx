@@ -1,11 +1,17 @@
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import Cart from "./components/Cart";
+
+const client = new ApolloClient({
+  uri: "/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   const [isModalVisible, setModalVisibility] = useState(false);
@@ -24,7 +30,7 @@ function App() {
   };
 
   return (
-    <>
+    <ApolloProvider client={client}>
       <Header
         onToggleModal={toggleModal}
         onToggleNav={toggleNav}
@@ -36,7 +42,7 @@ function App() {
       {/*also we need to prompt it if the user is not logged in eventually*/}
       {isCartVisible && <Cart onClose={toggleCart} />}
       <Footer />
-    </>
+    </ApolloProvider>
   );
 }
 
