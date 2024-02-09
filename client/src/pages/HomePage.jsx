@@ -17,10 +17,8 @@ const HomePage = () => {
     return <p>No featured items available.</p>;
   }
 
-  const featureItemInfo = data.items.find((item) => item._id);
-
   const featuredItems = data.items.filter((item) =>
-    item.category.includes(featureItemInfo.category[0])
+    item.category.includes("featured")
   );
 
   return (
