@@ -29,3 +29,15 @@ export const GET_ITEMS = gql`
     }
   }
 `;
+
+export const GET_ONE_ITEM = gql`
+  query Item($itemId: ID!) {
+    item(itemId: $itemId) {
+      _id
+      category
+      itemDescription
+      itemName
+      price
+    }
+  }
+`;

@@ -7,6 +7,12 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import Cart from "./components/Cart";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "/graphql",
+  cache: new InMemoryCache(),
+});
 
 const client = new ApolloClient({
   uri: "/graphql",
