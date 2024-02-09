@@ -5,6 +5,7 @@ const cleanDB = require("./cleanDB");
 
 db.once("open", async () => {
   await cleanDB("Item", "items");
+  await cleanDB("User", "users");
   await Item.create(seeds);
 
   console.log("all done!");
