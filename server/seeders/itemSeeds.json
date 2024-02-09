@@ -70,5 +70,59 @@
     "itemDescription": "Coming Soon",
     "category": ["plushies"],
     "price": "40.00"
+  },
+  {
+    "itemName": "Pokemon Diamond",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Pokemon Platinum",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games", "featured"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Mudkip Plushie",
+    "itemDescription": "Coming Soon",
+    "category": ["plushies"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Miraculous: Tales of Ladybug & Cat Noir (Manga) 1",
+    "itemDescription": "Coming Soon",
+    "category": ["comics", "featured"],
+    "price": "9.00"
+  },
+  {
+    "itemName": "Miraculous: Tales of Ladybug & Cat Noir (Manga) 2",
+    "itemDescription": "Coming Soon",
+    "category": ["comics"],
+    "price": "9.00"
+  },
+  {
+    "itemName": "Stardew Valley: The Board Game",
+    "itemDescription": "Coming Soon",
+    "category": ["board-games"],
+    "price": "65.00"
+  },
+  {
+    "itemName": "Octopath Traveler",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Octopath Traveler II",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games", "featured"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Bravely Default",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games", "featured"],
+    "price": "40.00"
   }
 ]
