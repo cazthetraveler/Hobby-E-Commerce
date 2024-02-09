@@ -22,7 +22,7 @@ const Category = () => {
     return <p>No featured items available.</p>;
   }
  console.log(data.items);
-  const callItem = data?.item || [];
+
 
   const filteredItems = data.items.filter((item) =>
     item.category.includes(item.category[0])
@@ -34,9 +34,7 @@ const Category = () => {
       <h2 className="text-3xl font-bold">{title} Categories</h2>
       <div>
         <ul>
-          { callItem && callItem.map( (item) =>
-            <ItemCard key={item._id} item={item} />
-          )}
+            <ItemCard items={filteredItems} />
         </ul>
       </div>
   </div>
