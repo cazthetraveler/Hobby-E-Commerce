@@ -8,6 +8,9 @@ const Category = () => {
     const currentPage = useLocation().pathname;
     const title = currentPage.split("/").pop().trim();
 
+    //gets catagory to lowercase
+    const lowerCat = title.toLowerCase();
+
     const { loading, error, data } = useQuery(GET_ITEMS);
 
   if (loading) {
@@ -21,21 +24,18 @@ const Category = () => {
   if (!data || !data.items) {
     return <p>No featured items available.</p>;
   }
- console.log(data.items);
-
-
+    //filters data for catagory
   const filteredItems = data.items.filter((item) =>
-    item.category.includes(item.category[0])
-  );
+    item.category[0] == lowerCat);
 
   //TODO
   return ( 
-  <div>
-      <h2 className="text-3xl font-bold">{title} Categories</h2>
-      <div>
-        <ul>
-            <ItemCard items={filteredItems} />
-        </ul>
+  <div className="m-8">
+      <h2 className="mb-6 text-4xl text-center font-bold">{title} Categories</h2>
+      <div className="flex justify-evenly">
+        {filteredItems.map((item) => (
+          <ItemCard key={item._id} item={item} />
+        ))}
       </div>
   </div>
   
