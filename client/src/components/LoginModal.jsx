@@ -1,7 +1,67 @@
 import { useState } from "react";
+import { useMutation } from "@apollo/client";
+
+import Auth from "../utils/auth";
+
+import { LOGIN_USER } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 
 const LoginModal = ({ onClose }) => {
-  //TODO
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [signUpFormData, setSignUpFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleRegisterInputChange = (event) => {
+    const { name, value } = event.target;
+    setSignUpFormData({ ...signUpFormData, [name]: value });
+  };
+
+  const handleLoginInputChange = (event) => {
+    const { name, value } = event.target;
+    setLoginFormData({ ...loginFormData, [name]: value });
+  };
+
+  const [addUser, { error }] = useMutation(ADD_USER);
+  const [loginUser, { loginError }] = useMutation(LOGIN_USER);
+
+  const handleRegisterSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(signUpFormData);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...signUpFormData },
+      });
+      console.log(data);
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleLoginSubmit = async (event) => {
+    event.preventDefault();
+    console.log(loginFormData);
+
+    try {
+      const { data } = await loginUser({
+        variables: { ...loginFormData },
+      });
+      Auth.login(data.login.token);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const [isLoginFormVisible, setLoginVisibility] = useState(true);
   const toggleForm = (e) => {
     e.preventDefault();
@@ -28,6 +88,7 @@ const LoginModal = ({ onClose }) => {
           <form
             id="login-form"
             className="flex flex-col items-center justify-evenly w-full h-full"
+            onSubmit={handleLoginSubmit}
           >
             <h2 className="text-4xl font-medium border-b-2 w-full text-center pb-3">
               Login
@@ -35,12 +96,18 @@ const LoginModal = ({ onClose }) => {
             <input
               id="login-email"
               type="email"
+              name="email"
+              onChange={handleLoginInputChange}
+              value={loginFormData.email}
               className="border-b-2 text-xl w-4/5 p-2 enabled:outline-transparent"
               placeholder="E-mail"
             />
             <input
               id="login-password"
               type="password"
+              name="password"
+              onChange={handleLoginInputChange}
+              value={loginFormData.password}
               className="border-b-2 text-xl w-4/5 p-2 enabled:outline-transparent"
               placeholder="Password"
             />
@@ -55,6 +122,7 @@ const LoginModal = ({ onClose }) => {
           <form
             id="login-form"
             className="flex flex-col items-center justify-evenly w-full h-full"
+            onSubmit={handleRegisterSubmit}
           >
             <h2 className="text-4xl font-medium border-b-2 w-full text-center pb-3">
               Register
@@ -63,12 +131,19 @@ const LoginModal = ({ onClose }) => {
               <input
                 id="first-name"
                 type="text"
+                name="firstName"
+                onChange={handleRegisterInputChange}
+                value={signUpFormData.firstName}
+                required
                 className="border-b-2 text-xl w-2/5 p-2 enabled:outline-transparent"
                 placeholder="First Name"
               />
               <input
                 id="last-name"
                 type="text"
+                name="lastName"
+                onChange={handleRegisterInputChange}
+                value={signUpFormData.lastName}
                 className="border-b-2 text-xl w-2/5 p-2 enabled:outline-transparent"
                 placeholder="Last Name"
               />
@@ -76,12 +151,18 @@ const LoginModal = ({ onClose }) => {
             <input
               id="register-email"
               type="email"
+              name="email"
+              onChange={handleRegisterInputChange}
+              value={signUpFormData.email}
               className="border-b-2 text-xl w-4/5 p-2 enabled:outline-transparent"
               placeholder="E-mail"
             />
             <input
               id="register-password"
               type="password"
+              name="password"
+              onChange={handleRegisterInputChange}
+              value={signUpFormData.password}
               className="border-b-2 text-xl w-4/5 p-2 enabled:outline-transparent"
               placeholder="Password"
             />

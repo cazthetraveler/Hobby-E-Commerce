@@ -9,13 +9,7 @@ export const LOGIN_USER = gql`
         email
         firstName
         lastName
-        shoppingCart {
-          _id
-          itemName
-          itemDescription
-          category
-          price
-        }
+        shoppingCart
       }
     }
   }
@@ -40,13 +34,7 @@ export const ADD_USER = gql`
         email
         firstName
         lastName
-        shoppingCart {
-          _id
-          category
-          itemDescription
-          itemName
-          price
-        }
+        shoppingCart
       }
     }
   }
