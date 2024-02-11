@@ -6,6 +6,9 @@ const resolvers = {
     users: async () => {
       return User.find().populate("shoppingCart");
     },
+    user: async (_parent, { _id }) => {
+      return User.findById(_id);
+    },
     items: async () => {
       return Item.find();
     },

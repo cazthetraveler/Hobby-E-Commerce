@@ -23,6 +23,7 @@ const typeDefs = `
 
   type Query {
     users: [User]
+    user(_id:ID!): User
     items: [Item]
     item(itemId: ID!): Item
   }

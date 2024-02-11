@@ -18,6 +18,14 @@ export const GET_USERS = gql`
   }
 `;
 
+export const GET_ONE_USER_CART = gql`
+  query getUserCart($id: ID!) {
+    user(_id: $id) {
+      shoppingCart
+    }
+  }
+`;
+
 export const GET_ITEMS = gql`
   query Items {
     items {
