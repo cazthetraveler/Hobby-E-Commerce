@@ -65,7 +65,7 @@ const Cart = ({ onClose }) => {
           id="to-checkout"
           className="mt-auto w-full p-3 flex flex-col items-center border-t-2"
         >
-          <h3 className="text-xl font-bold mb-3">Total: $0.00</h3>
+          <h3 className="text-xl font-bold mb-3">Total: </h3>
           <button className="bg-cyan-400 hover:bg-cyan-600 duration-200 text-white text-lg rounded-lg p-3">
             Proceed to Checkout
           </button>
