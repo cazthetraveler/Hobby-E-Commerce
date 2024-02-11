@@ -154,5 +154,35 @@
     "itemDescription": "Coming Soon",
     "category": ["comics"],
     "price": "9.00"
+  },
+  {
+    "itemName": "House of M Omnibus",
+    "itemDescription": "Coming Soon",
+    "category": ["comics"],
+    "price": "40.00"
+  },
+  {
+    "itemName": "D&D Dungeon Master's Guide",
+    "itemDescription": "Coming Soon",
+    "category": ["board-games"],
+    "price": "30.00"
+  },
+  {
+    "itemName": "D&D Monster Manual",
+    "itemDescription": "Coming Soon",
+    "category": ["board-games"],
+    "price": "20.00"
+  },
+  {
+    "itemName": "Baldur's Gate III",
+    "itemDescription": "Coming Soon",
+    "category": ["video-games"],
+    "price": "60.00"
+  },
+  {
+    "itemName": "Lil Ragnaros Plushie",
+    "itemDescription": "Coming Soon",
+    "category": ["plushies"],
+    "price": "15.00"
   }
 ]
