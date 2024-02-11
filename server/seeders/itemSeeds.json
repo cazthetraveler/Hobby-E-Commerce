@@ -157,31 +157,31 @@
   },
   {
     "itemName": "House of M Omnibus",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "The unstable Scarlet Witch has rewritten reality - into a world where Magneto is king! In this House of M, mutants are Earth's dominant species, living glamorous lives and reigning over the oppressed Sapien class. But Wolverine, now a member of Magnus' peacekeeping force S.H.I.E.L.D., remembers how the world used to be.",
     "category": ["comics"],
     "price": "40.00"
   },
   {
     "itemName": "D&D Dungeon Master's Guide",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Kick off your campaign with a thrilling introduction, complicate matters with moral quandaries, and end it all in an epic finale. This book will teach you how to craft compelling plots and create balanced combat encounters that are as easy or deadly as you want them to be—from fresh level 1 characters picking a bar fight to a level 20 party battling a dragon god.",
     "category": ["board-games"],
     "price": "30.00"
   },
   {
     "itemName": "D&D Monster Manual",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Fill your Dungeons & Dragons games with pesky goblins and mighty dragons for players to battle or beguile, outwit or outrun. Horrifying mind flayers, shimmering unicorns, jiggly gelatinous cubes—this book contains over 150 ready-to-play, easy-to-run monsters of all levels to challenge heroes throughout their adventuring careers.",
     "category": ["board-games"],
     "price": "20.00"
   },
   {
     "itemName": "Baldur's Gate III",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Role-playing video game developed and published by Belgian game developer Larian Studios. The game is the third main installment in the Baldur's Gate series, based on the tabletop fantasy role-playing system of Dungeons & Dragons.",
     "category": ["video-games"],
     "price": "60.00"
   },
   {
     "itemName": "Lil Ragnaros Plushie",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Bring the wrath of the Molten Core and the Firelands from Azeroth to your couch",
     "category": ["plushies"],
     "price": "15.00"
   }
