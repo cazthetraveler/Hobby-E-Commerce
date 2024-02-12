@@ -13,6 +13,7 @@ export const GET_USERS = gql`
         itemDescription
         itemName
         price
+        image
       }
     }
   }
@@ -34,6 +35,7 @@ export const GET_ITEMS = gql`
       itemDescription
       category
       price
+      image
     }
   }
 `;
@@ -46,6 +48,7 @@ export const GET_ONE_ITEM = gql`
       itemDescription
       itemName
       price
+      image
     }
   }
 `;

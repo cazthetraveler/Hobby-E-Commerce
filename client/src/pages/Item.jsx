@@ -35,7 +35,7 @@ const Item = () => {
     return <p>No items available.</p>;
   }
 
-  const { itemName, itemDescription, category } = data1.item;
+  const { itemName, itemDescription, category, image } = data1.item;
 
   const relatedItems = data2.items.filter((item) =>
     item.category.includes(category[0])
@@ -62,7 +62,7 @@ const Item = () => {
         <div className="mb-5 md:mb-0 md:w-1/2 flex justify-center">
           <img
             className="size-72 lg:size-96 2xl:size-3/4"
-            src="https://www.placeholder.co/500"
+            src={image}
             alt="Item"
           />
         </div>

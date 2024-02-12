@@ -1,9 +1,9 @@
 const CartItem = ({ item }) => {
-  const { itemName, price } = item;
+  const { itemName, price, image } = item;
 
   return (
     <section className="flex justify-between items-center p-3 border w-full bg-gray-200">
-      <img className="size-14" src="https://www.placeholder.co/500" />
+      <img className="size-14" src={image} />
       <div className="w-full pl-3">
         <h3>{itemName}</h3>
         {/* <h4>Qty: 1</h4> */}
