@@ -31,11 +31,11 @@ const Category = () => {
 
   //TODO
   return (
-    <div className="m-8">
+    <div className="m-8 flex flex-col items-center">
       <h2 className="mb-6 text-4xl text-center font-bold">
         {title} Categories
       </h2>
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly gap-5 w-1/2">
         {filteredItems.map((item) => (
           <ItemCard key={item._id} item={item} />
         ))}

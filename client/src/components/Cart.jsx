@@ -37,7 +37,6 @@ const Cart = ({ onClose }) => {
 
   const cartItemDetails = items.filter((item) => cartItems.includes(item._id));
 
-  // Calculate total price
   const totalPrice = cartItemDetails.reduce(
     (total, item) => total + item.price,
     0
