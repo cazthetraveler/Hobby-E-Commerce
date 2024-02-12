@@ -14,6 +14,7 @@ const typeDefs = `
     itemDescription: String
     category: [String]
     price: Float
+    image: String
   }
 
   type Auth {
