@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { GET_ONE_ITEM, GET_ITEMS } from "../utils/queries";
+import { ADD_TO_CART } from "../utils/mutations";
 import Carousel from "../components/Carousel";
 
 const Item = () => {
@@ -16,7 +17,7 @@ const Item = () => {
 
   const { loading: loading2, error: error2, data: data2 } = useQuery(GET_ITEMS);
 
-  console.log(data2);
+  const [addToCart] = useMutation(ADD_TO_CART);
 
   if (loading1 || loading2) {
     return <p>Loading...</p>;
@@ -34,18 +35,26 @@ const Item = () => {
     return <p>No items available.</p>;
   }
 
-  const { itemName, itemDescription, category } = data1.item;
+  const { itemName, itemDescription, category, image } = data1.item;
 
   const relatedItems = data2.items.filter((item) =>
     item.category.includes(category[0])
   );
+
+  const handleAddToCart = async () => {
+    try {
+      const { data } = await addToCart({ variables: { id } });
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <section
       id="item-overview"
       className="flex flex-col items-center p-5 md:px-9"
     >
-      {/* Item info section */}
       <section
         id="item-info"
         className="border-b-2 md:pb-7 lg:px-12 w-full 2xl:w-2/3 flex flex-col md:flex-row lg:justify-center items-center lg:items-start"
@@ -53,7 +62,7 @@ const Item = () => {
         <div className="mb-5 md:mb-0 md:w-1/2 flex justify-center">
           <img
             className="size-72 lg:size-96 2xl:size-3/4"
-            src="https://www.placeholder.co/500"
+            src={image}
             alt="Item"
           />
         </div>
@@ -63,7 +72,6 @@ const Item = () => {
         </div>
       </section>
 
-      {/* Add to cart section */}
       <section
         id="add-to-cart"
         className="border-b-2 p-5 md:p-7 lg:px-12 w-full 2xl:w-2/3 flex justify-center items-center text-xl 2xl:text-2xl"
@@ -76,12 +84,14 @@ const Item = () => {
             </option>
           ))}
         </select>
-        <button className="bg-emerald-500 hover:bg-emerald-700 duration-200 rounded-lg text-white w-1/2 xl:w-1/3 py-1 ml-8 xl:ml-48">
+        <button
+          onClick={handleAddToCart}
+          className="bg-emerald-500 hover:bg-emerald-700 duration-200 rounded-lg text-white w-1/2 xl:w-1/3 py-1 ml-8 xl:ml-48"
+        >
           Add to Cart
         </button>
       </section>
 
-      {/* Related items section */}
       <section
         id="related-items"
         className="border-b-2 p-5 md:p-7 w-full 2xl:w-2/3"

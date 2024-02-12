@@ -14,6 +14,7 @@ const typeDefs = `
     itemDescription: String
     category: [String]
     price: Float
+    image: String
   }
 
   type Auth {
@@ -23,6 +24,7 @@ const typeDefs = `
 
   type Query {
     users: [User]
+    user(_id:ID!): User
     items: [Item]
     item(itemId: ID!): Item
   }

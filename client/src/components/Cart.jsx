@@ -1,10 +1,42 @@
 import CartItem from "./CartItem";
+import Auth from "../utils/auth";
+import { GET_ONE_USER_CART, GET_ITEMS } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const Cart = ({ onClose }) => {
   const toggleClose = () => {
     onClose();
   };
-  //TODO
+
+  const userId = Auth.getProfile().data._id;
+
+  const {
+    loading: loadingCart,
+    error: errorCart,
+    data: dataCart,
+  } = useQuery(GET_ONE_USER_CART, {
+    variables: { id: userId },
+  });
+
+  const {
+    loading: loadingItems,
+    error: errorItems,
+    data: dataItems,
+  } = useQuery(GET_ITEMS);
+
+  if (loadingCart || loadingItems) {
+    return <p>Loading...</p>;
+  }
+
+  if (errorCart || errorItems) {
+    return <p>Error: {errorCart ? errorCart.message : errorItems.message}</p>;
+  }
+
+  const cartItems = dataCart.user.shoppingCart;
+  const items = dataItems.items;
+
+  const cartItemDetails = items.filter((item) => cartItems.includes(item._id));
+
   return (
     <aside
       id="modal-container"
@@ -25,23 +57,15 @@ const Cart = ({ onClose }) => {
           id="cart-item-overview"
           className="w-full flex flex-col gap-3 overflow-y-scroll"
         >
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
-          <CartItem /> {/* gets item name and qty from shopping cart */}
+          {cartItemDetails.map((item) => (
+            <CartItem key={item._id} item={item} />
+          ))}
         </section>
         <section
           id="to-checkout"
           className="mt-auto w-full p-3 flex flex-col items-center border-t-2"
         >
-          <h3 className="text-xl font-bold mb-3">Total: $0.00</h3>{" "}
-          {/* calculate total */}
+          <h3 className="text-xl font-bold mb-3">Total: </h3>
           <button className="bg-cyan-400 hover:bg-cyan-600 duration-200 text-white text-lg rounded-lg p-3">
             Proceed to Checkout
           </button>
