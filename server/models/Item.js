@@ -18,6 +18,10 @@ const itemSchema = new Schema({
     type: Number,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+  },
 });
 
 const Item = model("Item", itemSchema);
