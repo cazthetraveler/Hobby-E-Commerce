@@ -24,6 +24,8 @@ const Cart = ({ onClose }) => {
     data: dataItems,
   } = useQuery(GET_ITEMS);
 
+
+
   if (loadingCart || loadingItems) {
     return <p>Loading...</p>;
   }
@@ -63,7 +65,7 @@ const Cart = ({ onClose }) => {
           className="w-full flex flex-col gap-3 overflow-y-scroll"
         >
           {cartItemDetails.map((item) => (
-            <CartItem key={item._id} item={item} />
+            <CartItem key={item._id} item={item} userId={userId} />
           ))}
         </section>
         <section

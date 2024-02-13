@@ -17,7 +17,7 @@ const Item = () => {
 
   const { loading: loading2, error: error2, data: data2 } = useQuery(GET_ITEMS);
 
-  const [addToCart] = useMutation(ADD_TO_CART);
+  const [addToCart, { error }] = useMutation(ADD_TO_CART);
 
   if (loading1 || loading2) {
     return <p>Loading...</p>;
@@ -43,10 +43,12 @@ const Item = () => {
 
   const handleAddToCart = async () => {
     try {
+      console.log(data1.item);
+      console.log(id);
       const { data } = await addToCart({ variables: { id } });
       console.log(data);
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
     }
   };
 
