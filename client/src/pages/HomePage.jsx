@@ -1,4 +1,5 @@
 import Carousel from "../components/Carousel";
+import ItemCard from "../components/ItemCard";
 import { GET_ITEMS } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -23,9 +24,15 @@ const HomePage = () => {
 
   return (
     <section>
-      <h2>Home Page</h2>
-      <h2>Featured Items</h2>
+      <h2 className="my-6 text-4xl text-center font-bold">Featured Items</h2>
       <Carousel items={featuredItems} />
+      <div className="m-8">
+        <div className="flex flex-wrap justify-evenly">
+          {data.items.map((item) => (
+            <ItemCard key={item._id} item={item} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
