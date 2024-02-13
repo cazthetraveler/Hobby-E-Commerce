@@ -51,3 +51,15 @@ export const ADD_TO_CART = gql`
     }
   }
 `;
+
+export const REMOVE_FROM_CART = gql`
+  mutation RemoveFromCart($id: ID, $itemId: ID) {
+    removeFromCart(_id: $id, itemID: $itemId) {
+      _id
+      firstName
+      lastName
+      email
+      shoppingCart
+    }
+  }
+`;
