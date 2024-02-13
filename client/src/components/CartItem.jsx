@@ -24,7 +24,6 @@ const CartItem = ({ item, userId }) => {
       <img className="size-14" src={image} />
       <div className="w-full pl-3">
         <h3>{itemName}</h3>
-        {/* <h4>Qty: 1</h4> */}
         <h4>${price}.00</h4>
       </div>
       <button onClick={handleRemoveFromCart}>
