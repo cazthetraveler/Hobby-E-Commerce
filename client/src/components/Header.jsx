@@ -11,7 +11,7 @@ const Header = ({ onToggleModal, onToggleNav, onToggleCart }) => {
       <button onClick={onToggleNav} className="lg:hidden">
         <i className="fa-solid fa-bars text-3xl text-white hover:text-cyan-800 duration-200"></i>
       </button>
-      <h1 className="text-3xl text-white font-bold">Store Name</h1>
+      <h1 className="text-3xl text-white font-bold">Hobby Shop</h1>
       <div>
         {Auth.loggedIn() ? (
           <>
