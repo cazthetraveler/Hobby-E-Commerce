@@ -43,10 +43,22 @@ const resolvers = {
     addCart: async (_parent, args, context) => {
       if (context.user) {
         const itemToAdd = await Item.findById(args);
-        console.log(itemToAdd);
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { shoppingCart: itemToAdd._id } },
+          { $addToSet: { shoppingCart: args._id } },
+          { new: true, runValidators: true }
+        );
+        console.log(updatedUser);
+        return updatedUser;
+      }
+      return AuthenticationError;
+    },
+    removeFromCart: async (_parent, args, context) => {
+      if (context.user) {
+        // console.log(args); Test to see what args are being passed
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: args._id },
+          { $pull: { shoppingCart: args.itemID } },
           { new: true, runValidators: true }
         );
         return updatedUser;

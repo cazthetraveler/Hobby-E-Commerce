@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const ItemCard = ({ item }) => {
-  //TODO
   return (
     <Link to={`/items/${item._id}`}>
       <section className="p-2">

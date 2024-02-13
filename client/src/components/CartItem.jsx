@@ -1,5 +1,18 @@
-const CartItem = ({ item }) => {
-  const { itemName, price, image } = item;
+import { useMutation } from "@apollo/client";
+import { REMOVE_FROM_CART } from "../utils/mutations";
+
+const CartItem = ({ item, userId }) => {
+  const { _id, itemName, price, image } = item;
+
+  const [removeFromCart, { error }] = useMutation(REMOVE_FROM_CART);
+
+  const handleRemoveFromCart = async () => {
+    try {
+      const { data } = await removeFromCart({ variables: { id: userId, itemId: _id } });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <section className="flex justify-between items-center p-3 border w-full bg-gray-200">
@@ -9,7 +22,7 @@ const CartItem = ({ item }) => {
         {/* <h4>Qty: 1</h4> */}
         <h4>${price}.00</h4>
       </div>
-      <button>
+      <button onClick={handleRemoveFromCart}>
         <i className="fa-solid fa-trash text-xl text-red-500"></i>
       </button>
     </section>

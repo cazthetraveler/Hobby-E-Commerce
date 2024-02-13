@@ -24,6 +24,8 @@ const Cart = ({ onClose }) => {
     data: dataItems,
   } = useQuery(GET_ITEMS);
 
+
+
   if (loadingCart || loadingItems) {
     return <p>Loading...</p>;
   }
@@ -36,6 +38,11 @@ const Cart = ({ onClose }) => {
   const items = dataItems.items;
 
   const cartItemDetails = items.filter((item) => cartItems.includes(item._id));
+
+  const totalPrice = cartItemDetails.reduce(
+    (total, item) => total + item.price,
+    0
+  );
 
   return (
     <aside
@@ -58,14 +65,16 @@ const Cart = ({ onClose }) => {
           className="w-full flex flex-col gap-3 overflow-y-scroll"
         >
           {cartItemDetails.map((item) => (
-            <CartItem key={item._id} item={item} />
+            <CartItem key={item._id} item={item} userId={userId} />
           ))}
         </section>
         <section
           id="to-checkout"
           className="mt-auto w-full p-3 flex flex-col items-center border-t-2"
         >
-          <h3 className="text-xl font-bold mb-3">Total: </h3>
+          <h3 className="text-xl font-bold mb-3">
+            Total: ${totalPrice.toFixed(2)}
+          </h3>
           <button className="bg-cyan-400 hover:bg-cyan-600 duration-200 text-white text-lg rounded-lg p-3">
             Proceed to Checkout
           </button>
