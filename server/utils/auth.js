@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const { GraphQLError } = require("graphql");
 // set token secret and expiration date
-const secret = process.env.SESSKEY;
+const secret = process.env.SESSKEY || "super super secreat";
 const expiration = "2h";
 
 module.exports = {

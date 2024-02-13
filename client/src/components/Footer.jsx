@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="text-2xl text-white font-bold mx-6">
           <a href="https://github.com/drewhouses">
             <i className="fa-brands fa-github ml-16"></i>
-            <h2>Charles Casas</h2>
+            <h2>Drew Casas</h2>
           </a>
         </div>
         <div className="text-2xl text-white font-bold mx-6">
