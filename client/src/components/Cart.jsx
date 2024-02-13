@@ -14,6 +14,7 @@ const Cart = ({ onClose }) => {
     loading: loadingCart,
     error: errorCart,
     data: dataCart,
+    refetch: refetchCart,
   } = useQuery(GET_ONE_USER_CART, {
     variables: { id: userId },
   });
@@ -23,8 +24,6 @@ const Cart = ({ onClose }) => {
     error: errorItems,
     data: dataItems,
   } = useQuery(GET_ITEMS);
-
-
 
   if (loadingCart || loadingItems) {
     return <p>Loading...</p>;
@@ -43,6 +42,8 @@ const Cart = ({ onClose }) => {
     (total, item) => total + item.price,
     0
   );
+
+  refetchCart();
 
   return (
     <aside

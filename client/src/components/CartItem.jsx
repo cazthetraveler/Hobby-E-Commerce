@@ -1,14 +1,19 @@
 import { useMutation } from "@apollo/client";
 import { REMOVE_FROM_CART } from "../utils/mutations";
+import { GET_ONE_USER_CART } from "../utils/queries";
 
 const CartItem = ({ item, userId }) => {
   const { _id, itemName, price, image } = item;
 
-  const [removeFromCart, { error }] = useMutation(REMOVE_FROM_CART);
+  const [removeFromCart, { error }] = useMutation(REMOVE_FROM_CART, {
+    refetchQueries: [GET_ONE_USER_CART, "getUserCart"],
+  });
 
   const handleRemoveFromCart = async () => {
     try {
-      const { data } = await removeFromCart({ variables: { id: userId, itemId: _id } });
+      const { data } = await removeFromCart({
+        variables: { id: userId, itemId: _id },
+      });
     } catch (err) {
       console.log(err);
     }
@@ -19,7 +24,6 @@ const CartItem = ({ item, userId }) => {
       <img className="size-14" src={image} />
       <div className="w-full pl-3">
         <h3>{itemName}</h3>
-        {/* <h4>Qty: 1</h4> */}
         <h4>${price}.00</h4>
       </div>
       <button onClick={handleRemoveFromCart}>
