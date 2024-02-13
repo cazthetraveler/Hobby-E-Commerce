@@ -1,70 +1,70 @@
 [
   {
     "itemName": "One Punch Man Comic",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "One Punch Man is an action packed comic about Saitama defeating villians in one punch.",
     "category": ["comics"],
     "price": "40.00",
     "image": "/assets/images/one_punch_man.jpg"
   },
   {
     "itemName": "Monopoly",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Do you love capitalism? Do you like ruining your friendships? Well, this game is for you.",
     "category": ["board-games"],
     "price": "30.00",
     "image": "/assets/images/monopoly.jpg"
   },
   {
     "itemName": "Pokemon FireRed",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "An epic Pokemon journy awaits. In Pokemon FireRed you explore the Kanto region with your Pokemon.",
     "category": ["video-games", "featured"],
     "price": "60.00",
     "image": "/assets/images/pokemon_red.jpg"
   },
   {
     "itemName": "Psyduck Plushie",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "A soft, squshy, and adorable plushie of the Pokemon Psyduck.",
     "category": ["plushies", "featured"],
     "price": "45.00",
     "image": "/assets/images/psyduck_plushie.jpg"
   },
   {
     "itemName": "One Piece Comic",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Travel with Luffy and his pirate crew to be the king of the pirates.",
     "category": ["comics"],
     "price": "40.00",
     "image": "/assets/images/one_piece.jpg"
   },
   {
     "itemName": "Mouse Trap",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "A fun board game were you set up a rube goldberg machine in the middle of the board and watch the machine once.",
     "category": ["board-games"],
     "price": "25.00",
     "image": "/assets/images/mouse_trap.jpg"
   },
   {
     "itemName": "Maloch Cometh",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "A text based escape game about escaping an evil wizard's tower.",
     "category": ["video-games"],
     "price": "30.00",
     "image": "/assets/images/maloch.jpg"
   },
   {
     "itemName": "Wooper Plushie",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "A soft, squshy, and adorable plushie of the Pokemon Wooper.",
     "category": ["plushies"],
     "price": "30.00",
     "image": "/assets/images/wooper_plushie.jpg"
   },
   {
     "itemName": "Spiderman Comic",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "Its a comic of your famliy neighborhood Spiderman.",
     "category": ["comics", "featured"],
     "price": "50.00",
     "image": "/assets/images/spiderman.jpg"
   },
   {
     "itemName": "LIFE Board Game",
-    "itemDescription": "Coming Soon",
+    "itemDescription": "A board game where you pretend that life is going well.",
     "category": ["board-games"],
     "price": "25.00",
     "image": "/assets/images/life.jpg"
