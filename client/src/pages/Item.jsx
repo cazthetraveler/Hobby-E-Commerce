@@ -49,6 +49,7 @@ const Item = () => {
       console.log(data);
     } catch (err) {
       console.error(err);
+      console.error(error);
     }
   };
 
