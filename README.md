@@ -9,7 +9,7 @@ Hobby Shop is a E-Commerce website that sells game merchandice.
 We wanted to showcase our our skils and understanding for web development practices and topics, such as:
 
 - MongoDB
-- Render
+- React
 - JWT
 - GraphQL
 - Tailwind
@@ -28,6 +28,8 @@ No installation required.
 ## Usage
 
 Navigate to the app here: (https://hobby-ecommerce.onrender.com)
+
+![alt text](./client/public/hobbyshop.PNG)
 
 ## Credits
 
